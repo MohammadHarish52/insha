@@ -11,7 +11,7 @@ export const DATA = {
     "MCA student and CS graduate skilled in web dev and data analysis.",
   summary:
     "MCA student and Computer Science graduate with strong foundations in programming, data structures, and data analysis. Proficient in C, Java, Python, JavaScript, TypeScript, SQL, and frameworks like React, Tailwind CSS, and Node.js. Experienced in developing scalable web applications, analyzing datasets using Python and Power BI, and collaborating in Agile environments.",
-  avatarUrl: "/profile.png",
+  avatarUrl: "/profile.jpg",
   skills: [
     "C",
     "Java",
@@ -155,7 +155,7 @@ export const DATA = {
         "Collected and analyzed 2,000+ iPhone sales records from an open dataset.\n- Cleaned raw data using Python (Pandas, NumPy), reducing inconsistencies by 95%.\n- Designed an interactive Power BI dashboard, reducing analysis time by 40%.\n- Highlighted 15% YoY growth, top cities, and iPhone 15 Pro Max’s 14% margin boost",
       technologies: ["Python", "Pandas", "NumPy", "Power BI", "Excel"],
       links: [],
-      image: "",
+      image: "/image.png",
     },
   ],
   hackathons: [],
