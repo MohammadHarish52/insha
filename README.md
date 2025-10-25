@@ -2,9 +2,11 @@
 <img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
 </div>
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+# Insha Siddiqui — Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+Personal portfolio for Insha Siddiqui (MSc Business Analytics, University of Galway).
+
+Built with Next.js, [shadcn/ui](https://ui.shadcn.com/), and [Magic UI](https://magicui.design/), deployed on Vercel.
 
 # Features
 
@@ -19,13 +21,13 @@ Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/dillionverma/portfolio
+   git clone <YOUR_REPO_URL>
    ```
 
 2. Move to the cloned directory
 
    ```bash
-   cd portfolio
+   cd <your-folder-name>
    ```
 
 3. Install dependencies:
@@ -40,7 +42,13 @@ Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://
    pnpm dev
    ```
 
-5. Open the [Config file](./src/data/resume.tsx) and make changes
+5. Open and edit your content in the single config file: [src/data/resume.tsx](./src/data/resume.tsx)
+
+# Contact
+
+- Email: inshasiddiqui27@gmail.com
+- LinkedIn: https://www.linkedin.com/in/inshasiddiqui27/
+- X: https://x.com/bluntinsha
 
 # License
 
