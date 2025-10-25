@@ -45,8 +45,8 @@ export const ResumeCard = ({
       className="block cursor-pointer"
       onClick={handleClick}
     >
-      <Card className="flex">
-        <div className="flex-none">
+      <Card className="flex flex-col sm:flex-row">
+        <div className="flex-none sm:self-center p-2 sm:p-0">
           <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
             <AvatarImage
               src={logoUrl}
@@ -56,13 +56,13 @@ export const ResumeCard = ({
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
         </div>
-        <div className="flex-grow ml-4 items-center flex-col group">
+        <div className="flex-grow sm:ml-4 ml-0 group">
           <CardHeader>
-            <div className="flex items-center justify-between gap-x-2 text-base">
-              <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-x-2 gap-y-1 text-base">
+              <h3 className="inline-flex items-center justify-start font-semibold leading-none text-xs sm:text-sm flex-wrap">
                 {title}
                 {badges && (
-                  <span className="inline-flex gap-x-1">
+                  <span className="inline-flex gap-x-1 flex-wrap">
                     {badges.slice(0, MAX_BADGES_TO_SHOW).map((badge, index) => (
                       <Badge
                         variant="secondary"
@@ -91,7 +91,7 @@ export const ResumeCard = ({
                   )}
                 />
               </h3>
-              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
+              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-left sm:text-right self-start sm:self-auto">
                 {period}
               </div>
             </div>
