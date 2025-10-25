@@ -5,9 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { FaChevronRight } from "react-icons/fa6";
 import Link from "next/link";
 import React from "react";
+import { FaChevronRight } from "react-icons/fa6";
 
 interface ResumeCardProps {
   logoUrl: string;
@@ -30,6 +30,7 @@ export const ResumeCard = ({
   description,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const MAX_BADGES_TO_SHOW = 3;
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (description) {
@@ -62,15 +63,25 @@ export const ResumeCard = ({
                 {title}
                 {badges && (
                   <span className="inline-flex gap-x-1">
-                    {badges.map((badge, index) => (
+                    {badges.slice(0, MAX_BADGES_TO_SHOW).map((badge, index) => (
                       <Badge
                         variant="secondary"
-                        className="align-middle text-xs"
+                        className="align-middle text-xs truncate max-w-[140px]"
+                        title={badge}
                         key={index}
                       >
                         {badge}
                       </Badge>
                     ))}
+                    {badges.length > MAX_BADGES_TO_SHOW && (
+                      <Badge
+                        variant="secondary"
+                        className="align-middle text-xs"
+                        key="more"
+                      >
+                        +{badges.length - MAX_BADGES_TO_SHOW}
+                      </Badge>
+                    )}
                   </span>
                 )}
                 <FaChevronRight

@@ -21,7 +21,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
-                text={"Hello I am Adeem"}
+                text={"Hello, I'm Insha"}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -64,6 +64,30 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
+      <section id="work">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 6.5}>
+            <h2 className="text-xl font-bold">Work Experience</h2>
+          </BlurFade>
+          {DATA.work.map((job, id) => (
+            <BlurFade
+              key={`${job.company}-${id}`}
+              delay={BLUR_FADE_DELAY * 7 + id * 0.05}
+            >
+              <ResumeCard
+                logoUrl={job.logoUrl}
+                altText={job.company}
+                title={job.company}
+                subtitle={job.role}
+                href={job.href}
+                badges={job.badges}
+                period={`${job.start} - ${job.end}`}
+                description={job.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -103,46 +127,47 @@ export default function Page() {
           </div>
         </section>
       )}
-      <section id="projects">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 11}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  My Projects
+      {DATA.highlights && DATA.highlights.length > 0 && (
+        <section id="highlights">
+          <div className="space-y-12 w-full py-12">
+            <BlurFade delay={BLUR_FADE_DELAY * 11}>
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                    Highlights
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                    Impact & Achievements
+                  </h2>
+                  <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Selected achievements showcasing outcomes across analytics,
+                    operations, and leadership.
+                  </p>
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
-                </p>
               </div>
+            </BlurFade>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+              {DATA.highlights.map((item, id) => (
+                <BlurFade
+                  key={item.title}
+                  delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                >
+                  <ProjectCard
+                    href={item.href}
+                    key={item.title}
+                    title={item.title}
+                    description={item.description}
+                    dates={item.dates}
+                    tags={item.technologies}
+                    image={item.image}
+                    links={item.links}
+                  />
+                </BlurFade>
+              ))}
             </div>
-          </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
-                <ProjectCard
-                  href={project.href}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  tags={project.technologies}
-                  image={project.image}
-                  links={project.links}
-                />
-              </BlurFade>
-            ))}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
