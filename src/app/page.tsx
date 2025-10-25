@@ -159,7 +159,6 @@ export default function Page() {
                     description={item.description}
                     dates={item.dates}
                     tags={item.technologies}
-                    image={item.image}
                     links={item.links}
                   />
                 </BlurFade>
